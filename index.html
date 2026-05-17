@@ -211,6 +211,17 @@
       background: var(--accent2); vertical-align: -2px;
       animation: blink 1s step-end infinite;
     }
+    /* Thêm style cho thẻ input trong terminal */
+#cmd-input {
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  outline: none;
+  flex: 1;
+  caret-color: var(--accent2); /* Màu con trỏ nhấp nháy */
+}
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
     /* SECTION */
@@ -433,14 +444,22 @@
         <span class="dot dot-g"></span>
         <span class="t-title">bash — ~</span>
       </div>
-      <div class="terminal-body">
-        <div><span class="t-prompt">aduc@huflit</span><span class="t-muted" style="color:var(--muted)">:</span><span class="t-path">~/profile</span><span style="color:var(--muted)">$</span> <span class="t-cmd">cat whoami.txt</span></div>
-        <div class="t-out">Name        : Phan Trần Anh Đức</div>
-        <div class="t-out">Role        : Network Security @ HUFLIT (Year 3)</div>
-        <div class="t-out">Focus       : PenTest · ForensICS · Cryptography · SOC</div>
-        <div class="t-out">Status      : <span class="t-ok">Actively seeking internship / part-time</span></div>
-        <div style="margin-top:0.5rem"><span class="t-prompt">aduc@huflit</span><span style="color:var(--muted)">:</span><span class="t-path">~/profile</span><span style="color:var(--muted)">$</span> <span class="t-cursor"></span></div>
-      </div>
+<div class="terminal-body">
+  <!-- Khu vực hiển thị lịch sử lệnh -->
+  <div id="term-history">
+    <div><span class="t-prompt">aduc@huflit</span><span class="t-muted" style="color:var(--muted)">:</span><span class="t-path">~/profile</span><span style="color:var(--muted)">$</span> <span class="t-cmd">cat whoami.txt</span></div>
+    <div class="t-out">Name        : Phan Trần Anh Đức</div>
+    <div class="t-out">Role        : Network Security @ HUFLIT (Year 3)</div>
+    <div class="t-out">Focus       : PenTest · ForensICS · Cryptography · SOC</div>
+    <div class="t-out">Status      : <span class="t-ok">Actively seeking internship / part-time</span></div>
+  </div>
+
+  <!-- Dòng nhập lệnh mới -->
+  <div style="margin-top:0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+    <span><span class="t-prompt">aduc@huflit</span><span style="color:var(--muted)">:</span><span class="t-path">~/profile</span><span style="color:var(--muted)">$</span></span>
+    <input type="text" id="cmd-input" autocomplete="off" spellcheck="false" autofocus />
+  </div>
+</div>
     </div>
   </div>
 
