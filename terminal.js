@@ -88,7 +88,7 @@ inputElement.addEventListener('keypress', function (e) {
           `[HỆ THỐNG] Phát hiện tín hiệu từ Nhà tuyển dụng!<br>` +
           `Mức độ phù hợp: 99.9%<br>` +
           `Tình trạng: Đang chờ một lời mời thực tập/part-time.<br>` +
-          `Hãy liên hệ ngay qua email: <a href="mailto:email-cua-ban@gmail.com" style="color: var(--accent2)">email-cua-ban@gmail.com</a> 🚀`;
+          `Hãy liên hệ ngay qua email: <a href="mailto:phanduc031204@gmail.com" style="color: var(--accent2)">email-cua-ban@gmail.com</a> 🚀`;
         break;
 
       case 'cat note.txt':
